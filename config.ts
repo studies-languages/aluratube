@@ -1,7 +1,7 @@
 export const config = {
-  "name": "Mario Souto (DevSoutinho)",
-  "job": "Lead Software Engineer",
-  "github": "omariosouto",
+  "name": "Lucas de Sousa",
+  "job": "Analista de Q&A",
+  "github": "lucas5g",
   "playlists": {
       "jogos": [
           {
