@@ -13,14 +13,21 @@ const StyledHeader = styled.div`
     width: 100%;
     padding: 16px 30px;
     gap: 16px;
-    margin-top: 50px
   }
 `
+const StyledBanner = styled.div`
+  /* background: no-repeat, cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(${config.imageBanner});
+  height: 230px;
+`
+
 
 export function Header() {
   return (
     <StyledHeader>
-      {/* <img src="" alt="" /> */}
+      <StyledBanner />
       <section className='user-info'>
         <img src={`https://github.com/${config.github}.png`} alt="Image do Perfil" />
         <div>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SearchProps } from "./Menu/Search";
 
 export const StyledTimeline = styled.div`
   flex: 1;
@@ -46,13 +47,14 @@ export const StyledTimeline = styled.div`
   }
 `;
 interface Props {
-  playlists: any,
+  playlists: any
+  search: string
 }
 interface Video {
   url: string
   thumb: string
 }
-export function Timeline({ playlists }: Props) {
+export function Timeline({ playlists, search }: Props) {
 
   const playlistNames = Object.keys(playlists)
   console.log(playlistNames)
@@ -65,7 +67,8 @@ export function Timeline({ playlists }: Props) {
           <section key={index}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map((video: Video, index: number) => {
+              {videos.filter((video:any) => video.title.toLowerCase().includes(search.toLocaleLowerCase()))
+              .map((video: Video, index: number) => {
                 return (
                   <a href={video.url} key={index}>
                     <img src={video.thumb} alt="Imagem" />

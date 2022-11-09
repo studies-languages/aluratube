@@ -1,6 +1,5 @@
-
-
 import styled from "styled-components";
+import Search, { SearchProps } from "./Search";
 
 const StyledMenu = styled.header`
   display: flex;
@@ -26,12 +25,14 @@ const StyledMenu = styled.header`
   }
 `;
 
-export function Menu() {
+
+export function Menu({search, setSearch}: SearchProps) {
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
+      <Search search={search} setSearch={setSearch} />
     </StyledMenu>
   );
 }
